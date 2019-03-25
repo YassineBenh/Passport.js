@@ -51,11 +51,10 @@
            </ul>
        </nav>
        <header>
-           <h1>Yassine</h1>
-           <h2>Page d'accueil</h2>
+           <h1>Voilà votre profil, <%= user.username %></h1>
        </header>
        <main>
-           <p>Passport.js project</p>
+           <img src="<%= user.thumbnail %>" alt="profil">
        </main>
     </body>
 </html>

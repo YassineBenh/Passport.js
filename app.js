@@ -2,7 +2,7 @@ const express = require('express');
 const passportSetup = require('./config/passport-setup.js');
 const mongoose = require('mongoose');
 const keys = require('./config/keys.js');
-const cookieSession = require('cookie-session'):
+const cookieSession = require('cookie-session');
 const passport = require('passport');
 
 const app = express();
@@ -28,9 +28,12 @@ app.use(passport.session());
 // auth routes
 app.use('/auth', require('./routes/auth-routes.js'));
 
+// profile routes
+app.use('/profile', require('./routes/profile-routes.js'));
+
 //create home route
 app.get('/', (req, res) => {
-    res.render('home.ejs');
+    res.render('home.ejs', { user: req.user });
 });
 
 
